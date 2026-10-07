@@ -26,5 +26,11 @@ jobs:
           name: ${{ github.ref_type == 'tag' && github.ref_name || 'Development build' }}
           prerelease: ${{ github.ref_type != 'tag' }}
           generate_release_notes: true
+          body: |
+            ## Which file do I download?
+            - **StableApp Setup *.exe** — the installer (recommended). Installs StableApp with Start Menu + desktop shortcuts and an uninstaller.
+            - **StableApp *.exe** — the portable build. Runs without installing; keep it anywhere and double-click.
+
+            > Both files are the same app, just packaged differently. The exes are unsigned, so Windows SmartScreen will ask for confirmation on first run.
           files: release/*.exe
           fail_on_unmatched_files: true
