@@ -55,7 +55,7 @@ See [AGENTS.md](AGENTS.md) for contributor/agent notes (commands, IPC contract, 
 ## CI/CD
 
 - **CI** (`.github/workflows/ci.yml`): `npm ci` → `npm run lint` → `npm run build` on every push to `main` and every pull request.
-- **Release** (`.github/workflows/release.yml`): pushing a `v*` tag (e.g. `git tag v1.0.0 && git push origin v1.0.0`) builds the Windows installer + portable exe and attaches them to the GitHub Release automatically.
+- **Release** (`.github/workflows/release.yml`): every push to `main` rebuilds the Windows installer + portable exe and attaches them to the rolling **`dev` prerelease**; pushing a `v*` tag (e.g. `git tag v1.0.0 && git push origin v1.0.0`) publishes a stable release instead.
 
 ## License
 
